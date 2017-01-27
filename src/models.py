@@ -16,6 +16,9 @@ class User(db.Model):
     firstname = db.Column(db.String(30)) 
     lastname = db.Column(db.String(30))
     password = db.Column(db.String(92))
+    gender = db.Column(db.String(6))
+    dob = db.Column(db.DateTime)
+    phone = db.Column(db.PhoneNumberType())
     email = db.Column(db.String(120),unique=True,index=True)
     registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
@@ -25,12 +28,13 @@ class User(db.Model):
 
     summary = db.Column(db.String(250)) # profile summary from lorem ipsum
     pic = db.Column(db.String(60))
-    is_public = db.Boolean()
 
-    def __init__(self, firstname, lastname, password, email, city, state, summary, pic):
+    def __init__(self, firstname, lastname, password, dob, phone, email, city, state, summary, pic):
         self.firstname = firstname
         self.lastname = lastname
         self.set_password(password)
+        self.dob = dob 
+        self.phone = phone
         self.email = email
         self.city = city
         self.state = state

@@ -13,6 +13,9 @@ def seed_users():
         first = user['name']['first'].capitalize()
         last = user['name']['last'].capitalize()
         email = user['email']
+        gender = user['gender']
+        dob = user['dob']
+        phone = user['phone']
         password = user['login']['password']
         pic = user['picture']['large']
         city = user['location']['city'].title()
