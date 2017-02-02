@@ -7,3 +7,4 @@ SQLAlchemy>=1.0.10
 MySQL-python>=1.2.5
 requests>=2.9.0
 marshmallow>=2.5.0
+sqlalchemy_utils
