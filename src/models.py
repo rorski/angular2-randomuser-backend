@@ -22,7 +22,7 @@ class User(db.Model):
     dob = db.Column(db.DateTime)
     phone = db.Column(db.PhoneNumberType())
     email = db.Column(db.String(120),unique=True,index=True)
-    registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    # registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     # location
     city = db.Column(db.String(50))
@@ -31,10 +31,11 @@ class User(db.Model):
     summary = db.Column(db.String(250)) # profile summary from lorem ipsum
     pic = db.Column(db.String(60))
 
-    def __init__(self, firstname, lastname, password, dob, phone, email, city, state, summary, pic):
+    def __init__(self, firstname, lastname, password, gender, dob, phone, email, city, state, summary, pic):
         self.firstname = firstname
         self.lastname = lastname
         self.set_password(password)
+        self.gender = gender
         self.dob = dob 
         self.phone = phone
         self.email = email

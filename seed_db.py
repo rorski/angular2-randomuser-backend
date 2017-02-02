@@ -24,7 +24,8 @@ def seed_users():
         # Get a random summary from bacon ipsum
         summary = requests.get("https://baconipsum.com/api/?type=meat-and-filler&paras=1&format=text").text
 
-        u = User(firstname=first, lastname=last, password=password, email=email, city=city, state=state, summary=summary, pic=pic)
+        u = User(firstname=first, lastname=last, email=email, gender=gender, dob=dob,
+                 phone=phone, password=password, pic=pic, city=city, state=state, summary=summary)
         print "Adding user: {} {}".format(first, last)
 
         db.session.add(u)
