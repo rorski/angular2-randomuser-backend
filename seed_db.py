@@ -1,4 +1,5 @@
 import requests
+from sqlalchemy_utils import PhoneNumber
 from src.models import *
 
 def seed_users():
@@ -15,7 +16,7 @@ def seed_users():
         email = user['email']
         gender = user['gender']
         dob = user['dob']
-        phone = user['phone']
+        phone = PhoneNumber(user['phone'], 'US')
         password = user['login']['password']
         pic = user['picture']['large']
         city = user['location']['city'].title()
