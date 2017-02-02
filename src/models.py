@@ -20,7 +20,7 @@ class User(db.Model):
     password = db.Column(db.String(92))
     gender = db.Column(db.String(6))
     dob = db.Column(db.DateTime)
-    phone = db.Column(db.PhoneNumberType())
+    phone = db.Column(PhoneNumberType())
     email = db.Column(db.String(120),unique=True,index=True)
     # registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
