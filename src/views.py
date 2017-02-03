@@ -1,4 +1,4 @@
-from flask import request, send_file, jsonify
+from flask import request, send_file, jsonify, abort
 
 from src import app
 from src.models import *
@@ -9,7 +9,7 @@ users_schema = UserSchema(many=True)
 @app.route("/")
 def index():
     ''' Base index '''
-    return send_file('templates/index.html')
+    abort(403)
 
 @app.route('/api/v1/user', methods=['GET'])
 def users():

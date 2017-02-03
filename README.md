@@ -1,13 +1,12 @@
-# Angular2 backend for random user
-#### An angularjs based user listing
+# Flask / marshmallow API backend for angular2-randomuser
+#### See: https://github.com/rorski/angular2-randomuser
+#### See: https://randomuser.me/
 
-See: https://github.com/rorski/angular2-randomuser
+#### JSON list of all users imported from randomuser.me
+http://localhost:8000/api/v1/user
 
-#### Github install instructions
-1. Clone the repo
-2. Install the requirements
-> pip install -r requirements.txt
-3. Create the DB
-> python app.py createdb
-4. Run the test server (with debug, auto restart, listening on all interfaces)
+#### See a single user
+http://localhost:8000/api/v1/user/<number>
+
+#### Running the test server (with debug, auto restart, listening on all interfaces)
 > python app.py runserver -dr -h 0.0.0.0
